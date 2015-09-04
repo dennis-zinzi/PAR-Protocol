@@ -11,8 +11,10 @@ implementation {
   components AMSendReceiveC as Radio;
   components new TimerMilliC() as Timer0;
   
+  //New timer to use for resending data when is corrupted or lost
   components new TimerMilliC() as Timer1;
-  
+
+  //Wiring of new Timer component
   BlinkToRadioC.Timer1 -> Timer1;
   
   BlinkToRadioC.Boot -> MainC;
